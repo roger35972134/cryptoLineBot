@@ -2,6 +2,7 @@ class CurrencyController < ApplicationController
 	def search_by_abbreviation
 		abbreviation = params[:abbreviation]
 		api_response = Response::CurrencyResponse.new
+		Currency.get_currency
 
 		currency = Currency.find_by(:abbreviation => abbreviation)
 		unless currency.nil?

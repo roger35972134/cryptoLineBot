@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#regular task
+gem 'whenever'#, :require => false
+
 gem 'dotenv'
 gem 'mysql2'
 gem 'nokogiri'
