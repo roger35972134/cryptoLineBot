@@ -43,11 +43,9 @@ class Currency < ActiveRecord::Base
 		c = Currency.find_by(:abbreviation => abbreviation)
 
 		unless c.nil?
-			res = "currency: #{c.name}
-					value: #{c.value}
-					market_exchange: #{c.market_exchange}"
+			res = "Coin: #{c.name}\nPrice: #{c.value}\nMKT CAP: #{c.market_exchange}"
 		else
-			res = "Currency not found !"
+			res = "Coin not found !"
 		end
 		res
 	end
