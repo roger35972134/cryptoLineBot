@@ -26,7 +26,7 @@ class CurrencyController < ApplicationController
 	      	case event.type
 	     	when Line::Bot::Event::MessageType::Text
 	     		query = event.message['text']
-	     		res = search_by_abbreviation(query)
+	     		res = Currency.search_by_abbreviation(query)
 		        message = {
 		          type: 'text',
 		          text: res
