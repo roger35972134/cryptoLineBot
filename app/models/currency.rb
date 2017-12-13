@@ -38,7 +38,7 @@ class Currency < ActiveRecord::Base
 	end
 
 	def self.search_by_abbreviation(abbreviation)
-		get_currency
+		#get_currency
 
 		c = Currency.find_by(:abbreviation => abbreviation)
 
