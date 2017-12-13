@@ -38,13 +38,13 @@ class Currency < ActiveRecord::Base
 	end
 
 	def self.search_by_abbreviation(abbreviation)
-		#get_currency
+		get_currency
 
 		c = Currency.find_by(:abbreviation => abbreviation)
 
 		unless c.nil?
-			res = "currency: #{c.name}\n
-					value: #{c.value}\n
+			res = "currency: #{c.name}
+					value: #{c.value}
 					market_exchange: #{c.market_exchange}"
 		else
 			res = "Currency not found !"
