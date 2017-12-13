@@ -1,4 +1,5 @@
 # cryptoLineBot
 A Line Bot for Cryptocurrency
 
-![Alt text](https://qr-official.line.me/M/fJ7oSG33xP.png)
+![Line QR code](https://qr-official.line.me/M/fJ7oSG33xP.png)
+<img src = "https://qr-official.line.me/M/fJ7oSG33xP.png">
