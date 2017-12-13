@@ -1,18 +1,4 @@
 class CurrencyController < ApplicationController
-	def search_by_abbreviation
-		abbreviation = params[:abbreviation]
-		api_response = Response::CurrencyResponse.new
-		Currency.get_currency
-
-		currency = Currency.find_by(:abbreviation => abbreviation)
-		unless currency.nil?
-			api_response.info = currency
-		else
-			api_response.setErrMsg("currency not found")
-		end
-
-		render json: api_response
-	end
 
 	require 'line/bot'
 	def client
@@ -39,9 +25,11 @@ class CurrencyController < ApplicationController
 	    when Line::Bot::Event::Message
 	      	case event.type
 	     	when Line::Bot::Event::MessageType::Text
+	     		query = event.message['text']
+	     		res = search_by_abbreviation(query)
 		        message = {
 		          type: 'text',
-		          text: event.message['text']
+		          text: res
 		        }
 		        client.reply_message(event['replyToken'], message)
 	    	end
