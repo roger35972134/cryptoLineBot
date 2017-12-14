@@ -4,7 +4,6 @@ A Searcher for Cryptocurrency informations. Made by Line Bot
 ## Usage
 Type the symbol of Current, e.g. BTC.
 ## LineBot QR code
-<img src="fJ7oSG33xP.png" width=300/>
-<img src="25353233_1642311629123708_259620125_o.jpg" width=400/>
-<img src="25371286_1642268949127976_525342314_o.jpg" width=400/>
+<img src="Markdown_pic/fJ7oSG33xP.png" width=300/>
+<img src="Markdown_pic/big_ben.jpg" width=400/>
 
