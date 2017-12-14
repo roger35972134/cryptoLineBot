@@ -9,7 +9,7 @@ class CurrencyController < ApplicationController
 	end
 
 	def clinet2
-		@client ||= Line::Bot::Client.new { |config|
+		@client2 ||= Line::Bot::Client.new { |config|
 	    	config.channel_secret = ENV["LINE_CHANNEL_SECRET"] || "aa1a582b6359f43848c64cf151ed919c"
 	    	config.channel_token = ENV["LINE_CHANNEL_TOKEN"] || "1V2Lncj9KNTWZICN6sUfV1gAarKPs0z/ES5SR0hsF+V64c9T/xkkQEEGG3zfo0ACS34G1avwvaDfrTHtN0vz/P1C8Ahu4SN3avIcLXHdyow5X8RfPY1qXOYP+Ui1yGcmhRByHijxkV0P5RBI3gA1jQdB04t89/1O/w1cDnyilFU="
 	  	}
