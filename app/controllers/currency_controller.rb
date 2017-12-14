@@ -3,8 +3,8 @@ class CurrencyController < ApplicationController
 	require 'line/bot'
 	def client
 	  @client ||= Line::Bot::Client.new { |config|
-	    config.channel_secret = ENV["LINE_CHANNEL_SECRET"] || "a320a370df8bc56c649032b84dd756f1"
-	    config.channel_token = ENV["LINE_CHANNEL_TOKEN"] || "47eqwdQSxHRe0jDnYW3QHyDv3wmoxf39ebarCeqehS8uKZAAZqzhXxEfRD561cDd9Fee9nFMjYwa3VnI0p+QezsOWmT2qmM1OHAHirjvC3qIt2ZUtnpeOsa5BewBPLYq5p0hL5t8q0EcsZVxBxToDwdB04t89/1O/w1cDnyilFU="
+	    config.channel_secret = ENV["LINE_CHANNEL_SECRET"] || "0551810b48bcd34ff92a6bcfe3b74148"
+	    config.channel_token = ENV["LINE_CHANNEL_TOKEN"] || "/5SIOz52GCOHM8NFxzbSXNlhbEYGmelQIa4FIuoFVFhH/pNS5Pw3kFeXibkTDTJt9Fee9nFMjYwa3VnI0p+QezsOWmT2qmM1OHAHirjvC3pZdiM9sfcnZTU7nneG82lrQSKRnixPLAkMCninO49NOAdB04t89/1O/w1cDnyilFU="
 	  }
 	end
 
