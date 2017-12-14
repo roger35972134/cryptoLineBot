@@ -52,11 +52,11 @@ class CurrencyController < ApplicationController
 	  puts body
 
 	  signature = request.env['HTTP_X_LINE_SIGNATURE']
-	  unless client.validate_signature(body, signature)
+	  unless client2.validate_signature(body, signature)
 	    error 400 do 'Bad Request' end
 	  end
 
-	  events = client.parse_events_from(body)
+	  events = client2.parse_events_from(body)
 	  events.each { |event|
 	    case event
 	    when Line::Bot::Event::Message
@@ -68,7 +68,7 @@ class CurrencyController < ApplicationController
 		          type: 'text',
 		          text: res
 		        }
-		        client.reply_message(event['replyToken'], message)
+		        client2.reply_message(event['replyToken'], message)
 	    	end
 	    end
 	  }
