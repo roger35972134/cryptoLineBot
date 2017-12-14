@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'line/bot'
 #regular task
 gem 'whenever'#, :require => false
 
