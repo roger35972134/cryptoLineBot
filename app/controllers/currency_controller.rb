@@ -47,7 +47,7 @@ class CurrencyController < ApplicationController
 	end
 
 	def webhook2
-	  client2
+	  clinet2
 	  body = request.body.read
 	  puts body
 
