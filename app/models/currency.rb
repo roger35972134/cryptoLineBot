@@ -55,5 +55,6 @@ class Currency < ActiveRecord::Base
 		else
 			res = "伺服器目前維護中...\n請稍候再試，謝謝您的支持(oops)"
 		end
+		res
 	end
 end
