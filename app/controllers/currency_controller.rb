@@ -58,13 +58,13 @@ class CurrencyController < ApplicationController
 
 	  events = client2.parse_events_from(body)
 	  events.each { |event|
-	  	type = event.source['type']
 	    case event
 	    when Line::Bot::Event::Message
 	      	case event.type
 	     	when Line::Bot::Event::MessageType::Text
 	     		query = event.message['text']
-	     		
+	     		logger.info event.to_s
+	     		type = event["source"]['type']
 	     		res = Currency.search_by_abbreviation(query, type)
 		        message = {
 		          type: 'text',
