@@ -26,7 +26,7 @@ class CurrencyController < ApplicationController
 	end
 
 	def fb_client
-		Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["FB_ACCESS_TOKEN"])
+		
 	end
 
 	# post '/webhook' do
@@ -127,6 +127,7 @@ class CurrencyController < ApplicationController
 	#--------------------------------------------------------------
 
 	def webhook_facebook
+		Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["FB_ACCESS_TOKEN"])
 		"OK"
 	end
 end
