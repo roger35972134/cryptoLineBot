@@ -12,7 +12,7 @@ Bot.on :message do |message|
   Bot.deliver({
     recipient: message.sender,
     message: {
-      text: message.text
+      text: Currency.search_by_abbreviation_fb(message.text)
     }
   }, access_token: ENV["ACCESS_TOKEN"])
 end
