@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   post 'webhook'                  => 'currency#webhook'
   post 'webhook2'                  => 'currency#webhook2'
   post 'webhook3'                  => 'currency#webhook3'
-  #get 'webhook_facebook'         => 'currency#webhook_facebook'
-  mount Messenger::Bot::Space => "/webhook_facebook"
+  get 'webhook_facebook'         => 'currency#webhook_facebook'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
