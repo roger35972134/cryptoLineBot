@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'facebook-messenger'
 gem 'line-bot-api'
 #regular task
 gem 'whenever'#, :require => false

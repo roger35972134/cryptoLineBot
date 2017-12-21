@@ -1,25 +1,32 @@
 class CurrencyController < ApplicationController
 
 	require 'line/bot'
+	require "facebook/messenger"
+	include Facebook::Messenger
+
 	def client
 	  	@client ||= Line::Bot::Client.new { |config|
-	    	config.channel_secret = ENV["LINE_CHANNEL_SECRET"] || "0551810b48bcd34ff92a6bcfe3b74148"
-	    	config.channel_token = ENV["LINE_CHANNEL_TOKEN"] || "/5SIOz52GCOHM8NFxzbSXNlhbEYGmelQIa4FIuoFVFhH/pNS5Pw3kFeXibkTDTJt9Fee9nFMjYwa3VnI0p+QezsOWmT2qmM1OHAHirjvC3pZdiM9sfcnZTU7nneG82lrQSKRnixPLAkMCninO49NOAdB04t89/1O/w1cDnyilFU="
+	    	config.channel_secret = ENV["LINE_CHANNEL_SECRET_1"]
+	    	config.channel_token = ENV["LINE_CHANNEL_TOKEN_1"]
 	  	}
 	end
 
 	def client2
 		@client2 ||= Line::Bot::Client.new { |config|
-	    	config.channel_secret = ENV["LINE_CHANNEL_SECRET"] || "aa1a582b6359f43848c64cf151ed919c"
-	    	config.channel_token = ENV["LINE_CHANNEL_TOKEN"] || "1V2Lncj9KNTWZICN6sUfV1gAarKPs0z/ES5SR0hsF+V64c9T/xkkQEEGG3zfo0ACS34G1avwvaDfrTHtN0vz/P1C8Ahu4SN3avIcLXHdyow5X8RfPY1qXOYP+Ui1yGcmhRByHijxkV0P5RBI3gA1jQdB04t89/1O/w1cDnyilFU="
+	    	config.channel_secret = ENV["LINE_CHANNEL_SECRET_2"]
+	    	config.channel_token = ENV["LINE_CHANNEL_TOKEN_2"] 
 	  	}
 	end
 
 	def client3
 		@client3 ||= Line::Bot::Client.new { |config|
-	    	config.channel_secret = ENV["LINE_CHANNEL_SECRET"] || "942d77ce2040c9121806c93e805d5b55"
-	    	config.channel_token = ENV["LINE_CHANNEL_TOKEN"] || "vpxrN33Vlbiy6ou7O4hYmNgi1kBa/Y4eluFxjPaeAcjYZ3CvwI8iy8h6OZMeeixvWndY3RqtOuG6qVMAZ7mekXAFI/Es81ASWT8LSk1Fr7VpM7zXQnW5dpwZsj6KcDUHNiAtfuCE3+89rOCL5eVBFQdB04t89/1O/w1cDnyilFU="
+	    	config.channel_secret = ENV["LINE_CHANNEL_SECRET_3"]
+	    	config.channel_token = ENV["LINE_CHANNEL_TOKEN_3"] 
 	  	}
+	end
+
+	def fb_client
+		Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["FB_ACCESS_TOKEN"])
 	end
 
 	# post '/webhook' do
@@ -115,5 +122,11 @@ class CurrencyController < ApplicationController
 	  }
 
 	  "OK"
+	end
+
+	#--------------------------------------------------------------
+
+	def webhook_facebook
+		"OK"
 	end
 end
