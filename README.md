@@ -4,10 +4,10 @@ A Searcher for Cryptocurrency informations. Made by Line Bot <br>
 ## Usage
 Type the symbol of Current, e.g. BTC.
 ## LineBot QR code
-大本聰(好友上限 50 人)
+大本聰(好友上限 50 人)<br>
 <img src="Markdown_pic/fJ7oSG33xP.png" width=300 title="大本聰(好友上限50)"/>
 
-特大本聰 (無好友上限)
+特大本聰 (無好友上限)<br>
 <img src="Markdown_pic/fJ7oSG33xP - free trial.png" width=300 title="特大本聰(無好友上限)"/>
 
 <img src="Markdown_pic/big_ben.jpg" width=400/>
