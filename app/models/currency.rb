@@ -57,4 +57,5 @@ class Currency < ActiveRecord::Base
 		end
 		res
 	end
+
 end

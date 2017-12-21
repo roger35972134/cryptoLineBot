@@ -130,7 +130,7 @@ class CurrencyController < ApplicationController
 		Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["FB_ACCESS_TOKEN"])
 		body = JSON.parse(request.body.read)
 		entries = body['entry']
-		if body.dig('object') == 'page'
+		if body['object'] == 'page'
 		  entries.each do |entry|
 		    entry['messaging'].each do |message|
 		      reveive_message = message.dig('message','text').to_s
