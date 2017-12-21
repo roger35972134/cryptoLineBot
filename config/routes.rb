@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   post 'webhook'                  => 'currency#webhook'
   post 'webhook2'                  => 'currency#webhook2'
+  post 'webhook3'                  => 'currency#webhook3'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
