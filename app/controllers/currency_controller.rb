@@ -128,6 +128,6 @@ class CurrencyController < ApplicationController
 
 	def webhook_facebook
 		#Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["FB_ACCESS_TOKEN"])
-		render plain: params[‘hub.challenge’], status: 200
+		render plain: 'OK', status: 200
 	end
 end
