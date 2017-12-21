@@ -126,21 +126,21 @@ class CurrencyController < ApplicationController
 
 	#--------------------------------------------------------------
 
-	# def webhook_facebook
-	# 	Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["FB_ACCESS_TOKEN"])
-	# 	body = JSON.parse(request.body.read)
-	# 	entries = body['entry']
-	# 	if body['object'] == 'page'
-	# 	  entries.each do |entry|
-	# 	    entry['messaging'].each do |message|
-	# 	      reveive_message = message.dig('message','text').to_s
-	# 	      senderID = message.dig('sender','id')
+	 def webhook_facebook
+	 	Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["FB_ACCESS_TOKEN"])
+	 	body = JSON.parse(request.body.read)
+	 	entries = body['entry']
+	 	if body['object'] == 'page'
+	 	  entries.each do |entry|
+	 	    entry['messaging'].each do |message|
+	 	      reveive_message = message.dig('message','text').to_s
+	 	      senderID = message.dig('sender','id')
 
-	# 	      messageData = self.text_format(senderID, reveive_message)
-	# 	      res = HTTParty.post(uri, body: massageData.to_json, headers: { 'Content-Type' => 'application/json' })
-	# 	    end
-	# 	  end
-	# 	end
-	# 	#render plain: 'OK', status: 200
-	# end
+	 	      messageData = self.text_format(senderID, reveive_message)
+	 	      res = HTTParty.post(uri, body: massageData.to_json, headers: { 'Content-Type' => 'application/json' })
+	 	    end
+	 	  end
+	 	end
+	 	#render plain: 'OK', status: 200
+	 end
 end
