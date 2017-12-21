@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'messenger-bot'
 gem 'facebook-messenger'
 gem 'line-bot-api'
 #regular task
