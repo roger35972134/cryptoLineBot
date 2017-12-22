@@ -63,11 +63,12 @@ class Currency < ActiveRecord::Base
 			c = Currency.find_by(:abbreviation => abbreviation)
 
 			unless c.nil?
-				res = "貨幣: #{c.name}\n價格: #{c.value}\n市場價值: #{c.market_exchange}"
+				res = "Coin: #{c.name}\nPrice: #{c.value}\nMarket Cap: #{c.market_exchange}"
 			else
-				res = "請輸入正確的貨幣代號，例如：BTC (Bitcoin)!"
+				res = "Please give me a correct symbol，e.g. BTC (Bitcoin)!"
+			end
 		else
-			res = "伺服器目前維護中...\n請稍候再試，謝謝您的支持(oops)"
+			res = "Data server maintenance...\nPlease try later，thank you for your patient"
 		end
 		res
 	end
